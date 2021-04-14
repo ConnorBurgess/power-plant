@@ -86,12 +86,12 @@ $(document).ready(function() {
     $('#output').empty();
     Object.entries(plantObj).forEach(entry => {
       const [key, value] = entry;
-      console.log("hello");
-      $('#output').append(`<br><b>${value().name}</b> `);
-      $('#output').append(`<li> Soil: ${value().soil} </li>`);
-      $('#output').append(`<li> Water: ${value().water}</li> `);
-      $('#output').append(`<li> Light: ${value().light} </li>`);
-      // $('#output').append(`<li> Ability: ${value()} </li>`);
+      console.log(value.plant());
+      $('#output').append(`<br><b>${value.plant().name}</b> `);
+      $('#output').append(`<li> Soil: ${value.plant().soil} </li>`);
+      $('#output').append(`<li> Water: ${value.plant().water}</li> `);
+      $('#output').append(`<li> Light: ${value.plant().light} </li>`);
+      $('#output').append(`<li> Ability: ${value.eat("plant food")} </li>`);
     });
   });
 });
